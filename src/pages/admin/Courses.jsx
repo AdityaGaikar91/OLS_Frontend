@@ -44,7 +44,7 @@ export default function Courses() {
             <div key={c._id} className="bg-white rounded-2xl shadow p-5">
               {c.image && (
                 <img
-                  src={`http://localhost:8000/${c.image}`}
+                  src={c.image.startsWith("http") ? c.image : `http://localhost:8000/${c.image}`}
                   alt={c.name}
                   className="w-full h-36 object-cover rounded-xl mb-4"
                 />
